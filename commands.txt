@@ -1,0 +1,6 @@
+# Build the docker image
+docker build -t mssql-server2019-mlservices .
+
+# Run the docker image and create the container
+docker run -d -e MSSQL_PID=Developer -e ACCEPT_EULA=Y -e ACCEPT_EULA_ML=Y -e MSSQL_SA_PASSWORD=sqlmlpwd01 -v /Users/Stephen/Development/sql/sqlml/sqldata/:/var/opt/mssql -p 1433:1433 mssql-server-mlservices
+
